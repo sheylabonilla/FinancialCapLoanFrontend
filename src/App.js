@@ -1,9 +1,9 @@
 // App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './views/Login';
-import Chat from './views/Chat';
-import Register from './views/Register';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
 import './styles/App.css'; 
 
 function App() {
@@ -12,10 +12,10 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={isLogged ? <Chat /> : <Login />} />
+                <Route path="/" element={isLogged ? <Dashboard /> : <Login />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/chat" element={isLogged ? <Chat /> : <Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
         </Router>
     );
